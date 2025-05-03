@@ -1,0 +1,76 @@
+/* src/components/common/ThemeToggle.css */
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 100;
+}
+
+.toggle-button {
+  display: flex;
+  align-items: center;
+  background: #2f2f2f;
+  color: #f4e9cd;
+  border: 2px solid #d4af37;
+  border-radius: 25px;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Cinzel', serif;
+}
+
+.toggle-button.light {
+  background: #2f2f2f;
+}
+
+.toggle-button.dark {
+  background: #1a1a1a;
+}
+
+.toggle-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.toggle-button:hover .toggle-icon {
+  transform: rotate(30deg);
+}
+
+.sun-icon {
+  color: #d4af37;
+  font-size: 20px;
+}
+
+.moon-icon {
+  color: #c0c0c0;
+  font-size: 18px;
+}
+
+.toggle-text {
+  font-size: 14px;
+}
+
+/* Estilos para tela pequena */
+@media (max-width: 768px) {
+  .toggle-text {
+    display: none;
+  }
+  
+  .toggle-button {
+    padding: 8px;
+  }
+  
+  .toggle-icon {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,226 @@
+/* Importando fonte com estilo egípcio */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+/* Estilos globais */
+/* Adicione ao início do seu arquivo index.css */
+:root {
+  --bg-primary: #f4e9cd;
+  --text-primary: #2f2f2f;
+  --bg-secondary: #2f2f2f;
+  --text-secondary: #f4e9cd;
+  --accent: #d4af37;
+  --border-color: #d4af37;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #131313;
+  --text-primary: #e0e0e0;
+  --bg-secondary: #1c1c1c;
+  --text-secondary: #f0f0f0;
+  --accent: #d4af37;
+  --border-color: #d4af37;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  /* Outros estilos permanecem os mesmos */
+}
+
+/* Atualize seus outros estilos para usar as variáveis CSS */
+
+body {
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  background-color: #F4E9CD; /* Cor de papiro */
+  color: #2F2F2F;
+  overflow-x: hidden;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+#timelineContainer {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Animação de obelisco para carregamento */
+#loadingObelisk {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 0;
+  background: linear-gradient(to bottom, #D4AF37, #B54B19);
+  z-index: 1000;
+  opacity: 0.8;
+  animation: growObelisk 1.5s ease-out forwards;
+  border-radius: 2px 2px 0 0;
+}
+
+@keyframes growObelisk {
+  0% {
+    height: 0;
+  }
+  85% {
+    height: 120px;
+  }
+  90% {
+    height: 115px;
+  }
+  100% {
+    height: 120px;
+    opacity: 0;
+  }
+}
+
+/* Rodapé com hieróglifos */
+.egyptFooter {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  background-color: rgba(47, 47, 47, 0.6);
+}
+
+.hieroglyph {
+  font-size: 24px;
+  margin: 0 15px;
+  color: #D4AF37;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.hieroglyph:hover {
+  transform: translateY(-5px) scale(1.2);
+}
+
+/* Estilos de cabeçalho personalizados */
+.App-header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(rgba(30, 120, 191, 0.8), rgba(47, 47, 47, 0.9)), 
+              url('https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  color: #F4E9CD;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border-bottom: 3px solid #D4AF37;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  position: relative;
+  display: inline-block;
+}
+
+.App-header h1::before,
+.App-header h1::after {
+  content: "☥";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: #D4AF37;
+}
+
+.App-header h1::before {
+  left: -2rem;
+}
+
+.App-header h1::after {
+  right: -2rem;
+}
+
+.App-header p {
+  max-width: 600px;
+  margin: 1rem auto 0;
+  font-size: 1.1rem;
+}
+.help-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #d4af37;
+  color: #2f2f2f;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 90;
+}
+
+.help-button:hover {
+  transform: scale(1.1);
+  background-color: #c59f32;
+}
+/* Adicione ao seu index.css ou crie um arquivo App.css */
+
+.search-wrapper {
+  width: 80%;
+  max-width: 500px;
+  margin: 15px auto 0;
+}
+
+.search-results {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: var(--bg-primary);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.search-results h2 {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.search-results p {
+  color: var(--text-primary);
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+}
+/* Adicione ao seu index.css ou crie um arquivo sections.css */
+.section-container {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: var(--bg-primary);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.section-container h2 {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.info-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .info-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

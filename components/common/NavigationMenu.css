@@ -1,0 +1,62 @@
+.egypt-nav {
+  background-color: #2f2f2f;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.egypt-nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.egypt-nav li {
+  margin: 0 5px;
+}
+
+.egypt-nav button {
+  background: none;
+  border: none;
+  color: #f4e9cd;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.egypt-nav button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #d4af37;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.egypt-nav button:hover {
+  color: #d4af37;
+}
+
+.egypt-nav button:hover::after {
+  width: 80%;
+}
+
+.egypt-nav button.active {
+  color: #d4af37;
+  font-weight: bold;
+}
+
+.egypt-nav button.active::after {
+  width: 80%;
+}
